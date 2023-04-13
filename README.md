@@ -14,9 +14,9 @@ get into ggplot2 extension but might not be confident of how to do so
 Everyday is meant in the sense of *ordinary* – you don’t need to create
 a flashy ggplot2 extension for it to ‘count’. You don’t need to have
 lots of people using the extension. You don’t need the extension to be
-on CRAN. You don’t need to write a package for the extension. You don’t
-even need a hex sticker\! It is nice if the extension does some work for
-you or just makes you happy.
+on CRAN or write a package for the extension. You don’t even need a hex
+sticker\! It is nice if the extension does some work for you or just
+makes you happy.
 
 It’s also meant in the sense of *frequent* – practicing ggplot2
 extension will probably make you better at extension - you’ll be in a
@@ -74,9 +74,10 @@ What is [ggplot2](https://github.com/tidyverse/ggplot2) ?
 
 # New resources for absolute beginners
 
-\# Recipes: unpackaged, minimal working examples; from step 0.
+  - compute\_group recipes and tutorial
+  - compute\_panel recipes and tutorial
 
-\# ggextend
+\# ggextend: browseable, minimal working examples
 
 # Opportunities for extension?
 
@@ -129,11 +130,47 @@ The ‘daring young man on the flying trapeze’, Jules Leotard.
 
 </div>
 
+Heuristics for recognizing ggplot2 extension opportunities:
+
+  - I don’t feel like I’m flying; but usually I do
+  - My brain hurts because of the plot I’m trying to build; but usually
+    it’s happy or
+  - ‘getting that vision out of my head, and into reality, it’s just
+    really, really hard… harder than it should be.’
+
+<!-- end list -->
+
+``` r
+library(gganatogram)
+#> Loading required package: ggpolypath
+gganatogram(data=hgFemale_key, outline = T, 
+            fillOutline='#a6bddb', 
+            organism='human', sex='female', fill="colour")  +
+  ggstamp::stamp_wash(alpha = .8) +
+  geom_polygon(data = hgFemale_list$brain, aes(x = x, y = -y), 
+            fill = "red") +
+  coord_equal() + 
+  stamp_text_ljust(label = "Ouch!", angle = 5)
+#> Warning in annotate(geom = "rect", xmin = xmin, ymin = ymin, xmax = xmax, :
+#> Ignoring unknown aesthetics: x and y
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+
+# brainstorming a stamp (annotation) layer for the brain...
+stamp_female_brain <- function(...){
+  
+    geom_polygon(data = hgFemale_list$brain, aes(x = x, y = -y),...)
+  # could be polygon
+  
+}
+```
+
+<!-- > Pooh began to feel a little more comfortable, because when you are a Bear of Very Little Brain, and you Think of Things, you find sometimes that a Thing which seemed very Thingish inside you is quite different when it gets out into the open and has other people looking at it. - A.A. Milne The House at Pooh Corner (1928) ch. 6 -->
+
 # Existing resources
-
-### General
-
-  - The repository
 
 ### Extending ggplot2
 
