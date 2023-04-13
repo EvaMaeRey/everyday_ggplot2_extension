@@ -7,24 +7,24 @@
 
 <!-- badges: end -->
 
-Everyday ggplot2 is a collection of resources for people that want to
-get into ggplot2 extension but might not be confident of how to do so
+Everyday ggplot2 extension is a resource for people that want to get
+into ggplot2 extension but might not be confident of how to do so
 (‘absolute newcomers’).
 
-Everyday is meant in the sense of *ordinary* – you don’t need to create
-a flashy ggplot2 extension for it to ‘count’. You don’t need to have
-lots of people using the extension. You don’t need the extension to be
-on CRAN or write a package for the extension. You don’t even need a hex
-sticker\! It is nice if the extension does some work for you or just
+‘Everyday’ is meant in the sense of *ordinary* – you don’t need to
+create a flashy ggplot2 extension for it to ‘count’. You don’t need to
+have lots of people using the extension. You don’t need the extension to
+be on CRAN or write a package for the extension. You don’t even need a
+hex sticker\! It is nice if the extension does some work for you or just
 makes you happy.
 
-It’s also meant in the sense of *frequent* – practicing ggplot2
+‘Everyday’ is also meant in the sense of *frequent* – practicing ggplot2
 extension will probably make you better at extension - you’ll be in a
 position to write that next handy extension once when you have more
-under your belt.
+experience under your belt.
 
-Yes, ‘The Design of Everyday Things’ also comes to mind for us. We do
-want to thoughtfully design new avenues for bringing people into ggplot2
+And, yes our title evokes, ‘The Design of Everyday Things’. We do want
+to thoughtfully design new avenues for bringing people into ggplot2
 extension.
 
 And we also recognize that we might make ‘Norman’ (poorly designed)
@@ -60,25 +60,6 @@ ggcanvas() +
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-# 
-
-What is [ggplot2](https://github.com/tidyverse/ggplot2) ?
-
-# 3 waves of extenders?
-
-  - stalwarts; long-time ggplot2 extenders and developers
-  - warming up; \[<https://github.com/teunbrand/ggplot-extension-club>\]
-  - absolute newcomers; ggplot2 super-users, no extension experience
-    \[tutorial evaluation is underway and focus group may seed absolute
-    newcomers group\]
-
-# New resources for absolute beginners
-
-  - compute\_group recipes and tutorial
-  - compute\_panel recipes and tutorial
-
-\# ggextend: browseable, minimal working examples
-
 # Opportunities for extension?
 
 The reason ggplot2 exists is explained by Hadley Wickham in an
@@ -113,6 +94,12 @@ At some point ggplot2 will *seem* to fail to give you the fluid ggplot2
 experience. One day you will find yourself saying, ’Why aren’t I
 flying?" This might be a moment to check your grammar prowess; or it
 might be a moment to turn to ggplot2 extension(s)\!
+
+If after browsing extension others have provided, the [extensions
+gallery](https://exts.ggplot2.tidyverse.org/gallery/) and the [Awesome
+`ggplot2`](https://github.com/erikgahner/awesome-ggplot2) repository,
+you can’t find what you need to fly again, you can consider doing your
+own extension.
 
 ``` r
 knitr::include_graphics("jules_leotard.jpeg", )
@@ -170,18 +157,58 @@ stamp_female_brain <- function(...){
 
 <!-- > Pooh began to feel a little more comfortable, because when you are a Bear of Very Little Brain, and you Think of Things, you find sometimes that a Thing which seemed very Thingish inside you is quite different when it gets out into the open and has other people looking at it. - A.A. Milne The House at Pooh Corner (1928) ch. 6 -->
 
-# Existing resources
+# Taste and succeed: a recipes approach
 
-### Extending ggplot2
+layer extension recipes take the form:
 
-  - [Extending your ability to extend
-    ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/extending-your-ability-to-extend-ggplot2/)
-    by Thomas Lin Pederson at rstudio::conf 2020
+  - Step 0. Get the job done with ‘base’ ggplot2. It’s a good idea to
+    clarify what needs to happen without getting into the extension
+    architecture
+  - Step 1. Write a computation function. Wrap the necessary computation
+    into a function.
+  - Step 2. Define a ggproto object. ggproto objects allow your
+    extension to work together with base ggplot2 functions\! You’ll use
+    the computation function from step 1 to help define it.
+  - Step 3. Write your geom/stat\_\* function\! You’re ready to write
+    your function. You will incorporate the ggproto from step 2.
+  - Step 4. Test/Enjoy\! Take your new geom for a spin\! Check out
+    group-wise computation behavior\!
+
+## compute\_group recipes and tutorial
+
+  - 
+  - 
+  - compute\_panel recipes and tutorial
+
+  - ggextend: browseable, minimal working examples
+
+# communities of practice
+
+Communities of practice can help motivate and sustain productivity of
+projects.
+
+  - stalwarts; long-time ggplot2 extenders and developers
+  - warming up; \[<https://github.com/teunbrand/ggplot-extension-club>\]
+  - absolute newcomers; ggplot2 super-users, no extension experience
+    \[tutorial evaluation is underway and focus group may seed absolute
+    newcomers group\]
+
+‘everyday ggplot2 extension’ promotes the ‘warming up’ group and aspires
+to serve an ‘absolute newcomers’ group; and to promote cross pollination
+between groups.
+
+# Beyond ‘everyday ggplot2 extension’
+
+Any ‘everyday’ ggplot2 extender should also be aware of other invaluable
+learning resources (compiled by Teun Van Der Brand):
+
   - The [extending
     ggplot2](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html)
     vignette
+
   - The extending ggplot2 chapters of the [ggplot2
     book](https://ggplot2-book.org/):
+    
       - Chapter 19: [Programming with
         ggplot2](https://ggplot2-book.org/programming.html)
       - Chapter 20: [ggplot2
@@ -190,18 +217,18 @@ stamp_female_brain <- function(...){
         extensions](https://ggplot2-book.org/extensions.html)
       - Chapter 22: [Case Study:
         Springs](https://ggplot2-book.org/spring1.html)
+
   - The [ggproto](https://stackoverflow.com/questions/tagged/ggproto)
     tag on StackOverflow
+
+  - [Extending your ability to extend
+    ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/extending-your-ability-to-extend-ggplot2/)
+    by Thomas Lin Pederson at rstudio::conf 2020
+
   - [Cracking open ggplot internals with
     {ggtrace}](https://www.rstudio.com/resources/rstudioconf-2020/best-practices-for-programming-with-ggplot2/)
     by June Choe at rstudio::conf 2022
+
   - [Best practises for programming with
     ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/best-practices-for-programming-with-ggplot2/)
     by Dewey Dunnington at rstudio::conf 2020
-
-### Extensions
-
-  - The [extensions
-    gallery](https://exts.ggplot2.tidyverse.org/gallery/)
-  - The [Awesome
-    `ggplot2`](https://github.com/erikgahner/awesome-ggplot2) repository
