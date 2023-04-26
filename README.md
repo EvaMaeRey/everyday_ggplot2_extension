@@ -10,16 +10,17 @@
 ‘everyday ggplot2 extension’ is a resource for people that want to get
 into ggplot2 extension but might not be confident of how to do so
 (‘absolute newcomers’). It introduces some new points of entry
-including in education materials (recipes) and networking spaces.
+including in education materials (recipes) and
+networking/troubleshooting/celebrating/collaborating spaces.
 
 ‘Everyday’ is meant in the sense of *ordinary* – you don’t need to
 create a flashy ggplot2 extension for it to ‘count’. You don’t need to
 have lots of people using the extension. You don’t need the extension to
 be on CRAN or write a package for the extension. You don’t even need a
-hex sticker\! It is nice if the extension does some work for you or just
-makes you happy. Package development know-how can be complementary to
-ggplot2 extension, but are NOT a prerequisite and lack of that knowledge
-shouldn’t hold back the extension curious\!
+hex sticker\! It is nice if the extension does some work just for you or
+simply makes you happy. Package development know-how can be
+complementary to ggplot2 extension, but are NOT a prerequisite. Lack of
+package building knowledge shouldn’t hold back the extension curious\!
 
 ‘Everyday’ is also meant in the sense of *frequent* – practicing ggplot2
 extension will probably make you better at extension - you’ll be in a
@@ -30,10 +31,10 @@ And, yes our title evokes, ‘The Design of Everyday Things’. We do want
 to thoughtfully design new avenues for bringing people into ggplot2
 extension.
 
-And we also recognize that we might make ‘Norman’ (poorly designed)
-ggplot2 extension along the way since mistakes can sometimes be more
-instructive and memorable than doing things ‘the right way’ the first
-time round.
+And we also recognize that we will make ‘Norman’ (poorly designed)
+ggplot2 extension along the way. And this is fine since mistakes can
+sometimes be more instructive and memorable than doing things ‘the right
+way’ the first time round.
 
 ``` r
 knitr::include_graphics("design_of_everyday_things.jpg")
@@ -65,7 +66,7 @@ ggcanvas() +
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-# How do I know there’s an opportunities for extension?
+# How do I know there’s an opportunity for extension?
 
 The reason ggplot2 exists is explained by Hadley Wickham in an
 interview:
@@ -97,8 +98,9 @@ slam\!
 But then one day you may find yourself with a loss for graphical words
 within ggplot2. At some point ggplot2 will *seem* to fail to give you
 the fluid ggplot2 experience. One day you will find yourself saying,
-’Why aren’t I flying?" This might be a moment to check your grammar
-prowess; or it might be a moment to turn to ggplot2 extension(s)\!
+’Why aren’t I flying?" This might be a moment to double-check your
+grammar prowess; or it might be a moment to turn to ggplot2
+extension(s)\!
 
 If, after browsing existing extensions, the [extensions
 gallery](https://exts.ggplot2.tidyverse.org/gallery/) and the [Awesome
@@ -163,7 +165,7 @@ stamp_female_brain <- function(...){
 
 <!-- > Pooh began to feel a little more comfortable, because when you are a Bear of Very Little Brain, and you Think of Things, you find sometimes that a Thing which seemed very Thingish inside you is quite different when it gets out into the open and has other people looking at it. - A.A. Milne The House at Pooh Corner (1928) ch. 6 -->
 
-# Taste, succeed, and minimally modify: a recipes approach
+# A new ‘easy recipes’ approach: Taste, succeed, minimally modify
 
 layer extension recipes take the form:
 
@@ -205,26 +207,69 @@ I’m hopeful that an ‘absolute newcomers’ group may develop; this could
 consist of ggplot2 super-users, no extension experience [tutorial
 evaluation is underway and focus group may seed absolute newcomers
 group](https://github.com/EvaMaeRey/easy-geom-recipes) and their
-collaborators. It might spin off of the focus groups for the ‘easy geom
-recipes’ evaluation.
-
-  - [ggpuzzles](https://github.com/EvaMaeRey/ggpuzzles) is a place to
-    demo minimal not-yet-working examples. Extenders can share their
-    good ideas which maybe they don’t have quite the skills or knowledge
-    to execute on; or maybe they are just missing a comma\!
-
-  - \[ggamericas\] is an experiment in the geomSf-inheritance space,
-    seeking to foster cross-package synergies and lessons learned. The
-    following function collections in the works or proposed as early
-    guides in this space:
-    
-      - [ggfips](https://github.com/EvaMaeRey/ggfips)
-      - [ggbrazil](https://github.com/EvaMaeRey/ggbrazil)
-      - [ggnorthcarolina]()
+collaborators (is it cool and fun to explore the ggplot2 extension space
+w/ absolute newcomers *to ggplot2 and R* - yes it is\!). It might spin
+off of the focus groups for the ‘easy geom recipes’ evaluation.
 
 ‘everyday ggplot2 extension’ promotes the ‘warming up’ group and aspires
 to serve an ‘absolute newcomers’ group; and to promote cross pollination
 between groups.
+
+  - [ggpuzzles](https://github.com/EvaMaeRey/ggpuzzles) is a place to
+    demo minimal not-yet-working examples. Extenders can share their
+    good ideas which maybe they don’t have quite the skills or knowledge
+    to execute on; or maybe they are just missing a comma\! The
+    [ggproto](https://stackoverflow.com/questions/tagged/ggproto) tag on
+    StackOverflow is similar but might be dominated by more advanced
+    users.
+
+## Subject areas of application
+
+  - stats101verse
+    
+      - \[ggxmean\]
+      - \[ggols\]
+      - \[ggsample\]
+      - \[ma206data\]
+      - \[ma206distributions\]
+      - \[ma206equations\]
+
+<!-- https://www.newyorker.com/books/page-turner/the-allure-of-the-map#:~:text=Stevenson%20writes%2C%20in%20an%20essay,predestined%2C%20I%20ticketed%20my%20performance%20'-->
+
+I am told there are people that don’t care for maps, and I find it hard
+to believe. Robert Louis Stevenson
+
+  - \[ggamericas\] is an experiment in the geomSf-inheritance space,
+    seeking to foster cross-package synergies, lessons learned, and
+    emergance of best practices. The following packages are in the works
+    and are proposed as early guides in this space:
+    
+      - [ggfips](https://github.com/EvaMaeRey/ggfips)
+      - [ggnorthcarolina]()
+      - [ggbrazil](https://github.com/EvaMaeRey/ggbrazil)
+
+  - \[ggatlases\], explorations of non geographic atlases
+    
+      - ggbrain.experiment
+      - gganatomy.experiment
+      - ggteeth.experiment
+
+  - counting things
+    
+      - tidypivot
+      - ggcirclepack
+
+Shiny linkage…
+
+  - \[codequoteforshiny\] When you just want to talk about and
+    manipulate the contents of a plot and not dig into the weeds of how
+    to get there, shiny apps are great\! But if you are writing tools to
+    make ggplot2 interfaces that make the code a closer match with how
+    we think about the plot “getting the picture out of our heads”, than
+    you’ll probably also want to quote the code\! Looking at the code
+    shouldn’t feel too “in the weeds” because of the grammar of
+    graphic’s conceptual mapping – and your attention to conceptual
+    mapping\!
 
 # Beyond ‘everyday ggplot2 extension’
 
