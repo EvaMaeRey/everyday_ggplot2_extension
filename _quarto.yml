@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Everyday ggplot2 extension 🫖"
+  reader-mode: true
+  repo-url: https://github.com/EvaMaeRey/everyday_ggplot2_extension
+  repo-actions: [edit, issue]
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - projects.qmd
+      - href: index.qmd
+        text: Tutorials
+      - href: index.qmd
+        text: Community
+      - href: index.qmd
+        text: Cookbook
+      - href: index.qmd
+        text: Impact
+    tools:
+      - icon: github
+        href: https://github.com/evamaerey/everyday_ggplot2_extension
+  page-footer:
+    right: "Built with [Quarto](https://quarto.org/)"
+    left: "&copy; Copyright 2023, Gina Reynolds"
+
+format:
+  html:
+    theme: theme.scss
+    toc: true
+
+editor: source
