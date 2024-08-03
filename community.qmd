@@ -1,0 +1,17 @@
+---
+title: "Community"
+format: html
+editor: visual
+---
+
+### Communities of support and practice
+
+Go to [ggplot2 extenders](https://github.com/teunbrand/ggplot-extension-club).
+
+```{r, echo = F}
+knitr::include_graphics("https://raw.githubusercontent.com/teunbrand/ggplot-extension-club/main/ggextenders-hex_files/figure-html/unnamed-chunk-1-1.png")
+```
+
+Communities of practice can help motivate and sustain productivity of projects. [ggplot2 extenders](https://github.com/teunbrand/ggplot-extension-club) is a virtual micro meetup that has met since 2022. The group hears from extenders on motivations and challenges for extension packages. In the extender [discussions](https://github.com/teunbrand/ggplot-extension-club/discussions), participants can share their good ideas which maybe they don't have quite the skills or knowledge to execute on; or share new projects via 'show and tell'!
+
+I'm hopeful that an 'absolute newcomers' group may develop; this could consist of ggplot2 super-users, no extension experience [tutorial evaluation is underway and focus group may seed absolute newcomers group](https://github.com/EvaMaeRey/easy-geom-recipes) and their collaborators (is it cool and fun to explore the ggplot2 extension space w/ absolute newcomers *to ggplot2 and R* - yes it is!). It might spin off of the focus groups for the 'easy geom recipes' evaluation.

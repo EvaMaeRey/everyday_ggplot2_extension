@@ -1,0 +1,32 @@
+---
+title: "Tutorials"
+format: html
+editor: visual
+---
+
+## Taste, succeed, extend
+
+Go to [Easy Geom Recipes](https://evamaerey.github.io/easy-geom-recipes).
+
+
+'Easy geom\_\*() Recipes' provide first tastes of the power of ggplot2's Stat extension mechanism! 
+
+Why the Recipes? ggplot2's extension system allows us to build new 'vocabulary' for even more fluent expression. *But* getting a foothold into this space can be challenging, including in the useful Stat arena.
+\
+Early on in my own extension journey, I worked with with first and second year undergraduates, creating new geom\_\* functions for visual statistical storytelling in the [United States Military Academy at West Point](https://www.linkedin.com/company/united-states-military-academy-at-west-point/) math department!
+
+Those undergraduates were *very new* to the R programming language and to ggplot2, *but* were working in a space a lot of seasoned R users haven't traversed! 
+
+What did we do to make Stat extension manageable for these newcomers? 
+
+This pattern emerged: 
+
+- Step 0. Get the job done with 'base' ggplot2.
+- Step 1. Use base build experience to help define compute. *Test.*
+- Step 2. Use compute definition to define a new Stat. *Test.*
+- Step 3. Use your new Stat to define a user-facing geom\_\*() function. *Test (Enjoy your new function!)*
+
+We codified our experience in the 'Recipes', a set of three examples and three tasks to help orient to Stat extension, defining group-wise computation.\
+\
+This new methodology was tested and evaluated by a group of stats and data science educators. I'm so grateful to that group, and to tutorial pilot testers that helped so much with this product!
+

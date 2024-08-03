@@ -1,0 +1,9 @@
+---
+title: "Cookbook"
+format: html
+editor: visual
+---
+
+### more than a taste
+
+The ggplot2 extension cookbook goes beyond introductory 'first-taste' to extension provided by the easy recipes tutorials. There are many examples of extensions with different more complex flavors that may serve as examples for different possible applications. Go to [Cookbook](https://github.com/EvaMaeRey/ggplot2-extension-cookbook).

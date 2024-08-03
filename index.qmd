@@ -9,53 +9,64 @@ editor: visual
 
 `ggplot2` lets users 'write their plots into existence'. Users identify required plot components, name those elements, and ggplot2 produces the described plot. Code tends to be concise and intuitive, and it provides a faithful record of inputs and specification of a rendered plot. 
 
-*Extending* ggplot2 is a powerful way to enhance productivity and make plot coding more fluid and enjoyable. Given this, it's surprising just how limited some quite useful extension mechanism are — even among seasoned ggplot2 users. It has been warned, for example, 'Extending `ggplot2` ... is not for the faint-hearted'.[^1] This state of affairs is unfortunate, but we think this reality doesn't need to persist with greater sustained and focused attention to educational resources for potential extenders.
-
-[^1]: <https://www.cynthiahqy.com/posts/ggplot-helper-design/>
-
-'everyday ggplot2 extension' is born out of  (2020-present). It's goal is to provide education materials that will meet potential extenders where they and provide a community of support in extension endeavors. In short, this project seeks to support a new wave of extenders.[^2]
-
-[^2]: [support a new wave of ggplot2 extenders](https://bit.ly/ggextend-cowy).
-
-## Extension for mere mortals (everyday users)
-
-'Everyday' is meant in the sense of *ordinary* -- your ggplot2 extension doesn't need to be flashy or complicated.
-
-'Everyday' is also meant in the sense of *frequent*. Practicing ggplot2 extension will probably make you better at extension - you'll be in a position to write that next handy extension once when you have more experience under your belt. We've got some bite-sized exercises for you to build your know-how.
-
-Furthermore, we model how to use extension mechanisms on the day-to-day. I.e. on-the-fly and in script use. (For those who are eventually interested in packaging, the project seeks to support best practice in that area as well - workshop to come).
-
-## Support through missteps and hurdles
-
-
-By now, if you happen to know the book 'The Design of Everyday Things', you may be thinking our title evokes that work. That's correct. An aim is to design new avenues for bringing people into ggplot2 extension.
-
-And it's to be expected that we'll make poorly designed ggplot2 extensions along the way. And this is fine since mistakes can sometimes be more instructive and memorable than doing things 'the right way' the first time round. It's hard to imagine Norman's book selling as well without the ill-conceived tea kettle gracing the cover. In fact the 'Norman door' is one whose design makes door-use difficult. Expecting mistakes is another reason to make ggplot2 extension a less out-of-the-ordinary experience; past extensions feel less precious and we can part ways with them if appropriate. A deprecated package or abandoned function may have been of great service in getting you to a place that's more sensible.
-
 ```{r, include = F}
 knitr::opts_chunk$set(message = F, echo = F, warning = F)
 ```
 
 ```{r}
-knitr::include_graphics("design_of_everyday_things.jpg")
-```
-
-```{r, eval = F}
 library(ggstamp)
 library(ggplot2)
 ggcanvas() + 
-  stamp_polygon(x0y0 = pos_honeycomb(n = 9), 
-                fill = "darkgoldenrod1") + 
-  stamp_text(label = c("ggxmean", "ggstamp", "ggols", 
-                       "ggsample", "ggcalendar", 
-                       "ggchalkb...", "ggquiet", "ggcirclepack",
-                       "ggdirect"), 
-             xy = pos_honeycomb(n = 9), size = 5) +
-  labs(title = "trying stuff out in ggplot2 extension",
-       subtitle = "honeycombs are surprisingly strong structures",
-       caption = "expert and experiment have the same latin root: 'experi', to try") 
+  stamp_polygon(x0y0 = pos_honeycomb(n = 50, ncol = 10), 
+                fill = "whitesmoke") + 
+  # stamp_text(label = c("ggxmean", "ggstamp", "ggols", 
+  #                      "ggsample", "ggcalendar", 
+  #                      "ggchalkb...", "ggquiet", "ggcirclepack",
+  #                      "ggdirect"), 
+  #            xy = pos_honeycomb(n = 9), size = 5) +
+  # labs(title = "trying stuff out in ggplot2 extension",
+  #      subtitle = "honeycombs are surprisingly strong structures",
+  #      caption = "expert and experiment have the same latin root: 'experi', to try") +
+  ggstamp::stamp_wash(fill = "whitesmoke") +
+  ggstamp::theme_void_fill("whitesmoke") + 
+  ggstamp::stamp_png(png = "800px-Ggplot2_hex_logo.png", x0 = 6,
+                     y0 = -3, width = 4
+                    )
 
+download.file("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ggplot2_hex_logo.png/800px-Ggplot2_hex_logo.png", destfile = "800px-Ggplot2_hex_logo.png")  
+  
 ```
+
+
+*Extending* ggplot2 is a powerful way to enhance productivity and make plot coding more fluid and enjoyable. Given this, it's surprising just how limited some quite useful extension mechanism are — even among seasoned ggplot2 users. The reason might because of the prevailing attitude that, 'extending `ggplot2` ... is not for the faint-hearted'[^1] and that extension fairly inaccessible activity suitable for dedicated 'devs' with considerable time on their hands. This is unfortunate.  We think this reality doesn't need to persist and is resolvable with greater focused and sustained attention to educational resources for potential extenders.
+
+[^1]: <https://www.cynthiahqy.com/posts/ggplot-helper-design/>
+
+'everyday ggplot2 extension' is born from the belief  extension could be much more accessible and mainstream (2020-present). It's goal is to provide education materials that will meet potential extenders where they and provide a community of support in extension endeavors. In short, this project seeks to support a new wave of extenders.[^2]
+
+[^2]: [support a new wave of ggplot2 extenders](https://bit.ly/ggextend-cowy).
+
+## Extension for mere mortals (everyday users)
+
+'Everyday' is meant in the sense of *ordinary* -- your ggplot2 extension doesn't need to be flashy or complicated.  And 'ordinary' ggplot2 users (who may be quite extraordinary in other domains) should be able to harness previously less accessed -- but powerful -- extension mechanisms. 
+
+'Everyday' is also meant in the sense of *frequent*. Practicing ggplot2 extension will probably make you better at extension - you'll be in a position to write that next handy extension once when you have more experience under your belt. We've got some bite-sized exercises for you to build your know-how.
+
+Furthermore, we model how to use extension mechanisms on the day-to-day. I.e. on-the-fly and in script use. (For those who are eventually interested in packaging, the project seeks to support best practice in that area as well - workshop to come).
+
+## Anticipating hurdles and learning through failure
+
+By now, if you happen to know the book 'The Design of Everyday Things', you may be thinking our title evokes that work. That's correct. An aim is to design new avenues for bringing people into ggplot2 extension.
+
+```{r}
+knitr::include_graphics("design_of_everyday_things.jpg")
+```
+
+And it's to be expected that we'll make poorly designed ggplot2 extensions along the way. And this is fine since mistakes can sometimes be more instructive and memorable than doing things 'the right way' the first time round. It's hard to imagine Norman's book selling as well without the ill-conceived tea kettle gracing the cover. In fact the 'Norman door' is one whose design makes door-use difficult. Expecting mistakes is another reason to make ggplot2 extension a less out-of-the-ordinary experience; past extensions feel less precious and we can part ways with them if appropriate. A deprecated package or abandoned function may have been of great service in getting you to a place that's more elegant or efficient.
+
+
+
+
 
 # How do I know there's an opportunity for extension?
 
@@ -63,7 +74,7 @@ The reason ggplot2 exists is explained by Hadley Wickham in an interview:
 
 > And, you know, I'd get a dataset. And, *in my head I could very clearly kind of picture*, I want to put this on the x-axis. Let's put this on the y-axis, draw a line, put some points here, break it up by this variable. And then, like, getting that vision out of my head, and into reality, it's just really, really hard. Just, like, felt harder than it should be... Where I just felt like ... [should just be able] to say *this is what I'm thinking, this is how I'm picturing this plot. Like you're the computer 'Go and do it'.* - <https://www.trifacta.com/podcast/tidy-data-with-hadley-wickham/>
 
-Born out of this frustration and knowedge of Leland Wilkinson's Grammar of Graphics, ggplot2 was built with its 'logically decomposed bits', which generally lets you fly through plot creation with ease. You can go from the plot you've already pictured in your head into reality simply by describing it.
+Born out of this frustration and knoweldge of Leland Wilkinson's Grammar of Graphics, ggplot2 was built with its 'logically decomposed bits' to let you fly through plot creation with ease. You can go from the plot you've already pictured in your head into reality simply by describing it.
 
 After a good amount of time using ggplot2, you get used to this flying sensation. You've practiced and mastered the grammar. You are a composer of 'graphical poems' --- how the 2010 introductory paper on ggplot2 describes the code for the plot compositions. You confidently speak plots into existence. Poetry slam!
 
@@ -104,31 +115,13 @@ stamp_female_brain <- function(...){
 
 <!-- > Pooh began to feel a little more comfortable, because when you are a Bear of Very Little Brain, and you Think of Things, you find sometimes that a Thing which seemed very Thingish inside you is quite different when it gets out into the open and has other people looking at it. - A.A. Milne The House at Pooh Corner (1928) ch. 6 -->
 
-# A new 'easy recipes' approach to creating and using new Stats: Taste, succeed, minimally modify
+## [Tutorials](/tutorials)
 
-layer extension recipes take the form:
+## [Cookbook](/cookbook)
 
--   Step 0. Get the job done with 'base' ggplot2. It's a good idea to clarify what needs to happen without getting into the extension architecture
+## [Community](/community)
 
--   Step 1. Write a computation function. Wrap the necessary computation into a function.
 
--   Step 2. Define a ggproto object. ggproto objects allow your extension to work together with base ggplot2 functions! You'll use the computation function from step 1 to help define it.
-
--   Step 3. Write your geom/stat\_\* function! You're ready to write your function. You will incorporate the ggproto from step 2.
-
--   Step 4. Test/Enjoy! Take your new geom for a spin! Check out group-wise computation behavior!
-
--   link to easy geom recipes: first taste
-
--   cookbook
-
--   {statexpress} package for concisely writing
-
--   in-script extension examples
-
-    -   
-
-    -   
 
 ## Fine print
 
@@ -136,117 +129,6 @@ The focus at present has been Stat extension, though we hope to emphasize other 
 
 compute_group recipes and tutorial
 
-# Communities of practice
-
-
-
-Communities of practice can help motivate and sustain productivity of projects.
-
--   [ggplot2 extenders](https://github.com/teunbrand/ggplot-extension-club) has met since
-
--   [discussion](https://github.com/teunbrand/ggplot-extension-club/discussions) Extenders can share their good ideas which maybe they don't have quite the skills or knowledge to execute on; or maybe they are just missing a comma! The [ggproto](https://stackoverflow.com/questions/tagged/ggproto) tag on StackOverflow is similar but might be dominated by more advanced users.)
-
--   stalwarts; long-time ggplot2 extenders and developers
-
-'everyday ggplot2 extension' would like to point you to new communities of practice -- places were you can share work and frustrations in the ggplot2 world:
-
--   warming up; \[<https://github.com/teunbrand/ggplot-extension-club>\]
-
-I'm hopeful that an 'absolute newcomers' group may develop; this could consist of ggplot2 super-users, no extension experience [tutorial evaluation is underway and focus group may seed absolute newcomers group](https://github.com/EvaMaeRey/easy-geom-recipes) and their collaborators (is it cool and fun to explore the ggplot2 extension space w/ absolute newcomers *to ggplot2 and R* - yes it is!). It might spin off of the focus groups for the 'easy geom recipes' evaluation.
-
-'everyday ggplot2 extension' promotes the 'warming up' group and aspires to serve an 'absolute newcomers' group; and to promote cross pollination between groups.
-
--   [ggpuzzles](https://github.com/EvaMaeRey/ggpuzzles) is a place to demo minimal not-yet-working examples. Extenders can share their good ideas which maybe they don't have quite the skills or knowledge to execute on; or maybe they are just missing a comma! The [ggproto](https://stackoverflow.com/questions/tagged/ggproto) tag on StackOverflow is similar but might be dominated by more advanced users.
-
-## Read along packages
-
--   ggcalendar
-
--   gg
-
-## By subject area of application
-
--   stats101verse
-
-    -   \[ggxmean\]
-    -   \[ggols\]
-    -   \[ggsample\]
-    -   \[ma206data\]
-    -   \[ma206distributions\]
-    -   \[ma206equations\]
-
-<!-- https://www.newyorker.com/books/page-turner/the-allure-of-the-map#:~:text=Stevenson%20writes%2C%20in%20an%20essay,predestined%2C%20I%20ticketed%20my%20performance%20'-->
-
-### Spatial
-
-<https://ivelasq.rbind.io/blog/leaidr2/> school district maps
-
-> I am told there are people that don't care for maps, and I find it hard to believe. - Robert Louis Stevenson
-
--   \[ggamericas\] is an experiment in the geomSf-inheritance space, seeking to foster cross-package synergies, lessons learned, and emergence of best practices. The following packages are in the works and are proposed as early guides in this space:
-
-    -   [ggfips](https://github.com/EvaMaeRey/ggfips)
-
-    -   [ggnorthcarolina]()
-
-    -   [ggbrazil](https://github.com/EvaMaeRey/ggbrazil)
-
-    -   
-
-    ```{=html}
-    <!-- -->
-    ```
-    -   tidypivot
-    -   ggcirclepack
-
-<!-- Shiny linkage... -->
-
-<!--  - [codequoteforshiny] When you just want to talk about and manipulate the contents of a plot and not dig into the weeds of how to get there, shiny apps are great!  But if you are writing tools to make ggplot2 interfaces that make the code a closer match with how we think about the plot "getting the picture out of our heads", than you'll probably also want to quote the code!  Looking at the code shouldn't feel too "in the weeds" because of the grammar of graphic's conceptual mapping -- and your attention to conceptual mapping! -->
-
-# 
-
-## More resources
-
-Any 'everyday' ggplot2 extender should also be aware of other invaluable learning resources (compiled by Teun Van Der Brand):
-
--   The [extending ggplot2](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html) vignette
-
--   The extending ggplot2 chapters of the [ggplot2 book](https://ggplot2-book.org/):
-
-    -   Chapter 19: [Programming with ggplot2](https://ggplot2-book.org/programming.html)
-    -   Chapter 20: [ggplot2 internals](https://ggplot2-book.org/internals.html)
-    -   Chapter 21: [Writing ggplot2 extensions](https://ggplot2-book.org/extensions.html)
-    -   Chapter 22: [Case Study: Springs](https://ggplot2-book.org/spring1.html)
-
--   The [ggproto](https://stackoverflow.com/questions/tagged/ggproto) tag on StackOverflow
-
--   [Extending your ability to extend ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/extending-your-ability-to-extend-ggplot2/) by Thomas Lin Pederson at rstudio::conf 2020
-
--   [Cracking open ggplot internals with {ggtrace}](https://www.rstudio.com/resources/rstudioconf-2020/best-practices-for-programming-with-ggplot2/) by June Choe at rstudio::conf 2022
-
--   [Best practises for programming with ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/best-practices-for-programming-with-ggplot2/) by Dewey Dunnington at rstudio::conf 2020
-
-# g.p.
-
-## Contributors
-
-Especially notably in willingness to have conversations about how to make Stat extension more accessible is June Choe; he also has been very open to technical discussion and has played an especially large role in my fluency in using delayed aesthetic evaluation. Teun van den Brand has also been helpful and open to discussion about about technical aspects of particular extension questions.
-
-I'm indebted to the [ggplot2 extenders meet-up](https://github.com/teunbrand/ggplot-extension-club/blob/main/README.md) presenters and participants, that have provided a wealth of insight about extension experiences.
-
-In the future anticipate Denver R-Ladies to be a resource for candid, person-to-person feedback. We recently [relaunched](https://www.meetup.com/rladies-denver/events/299879858/) the group and I anticipate interest in the topic of ggplot2 extension, and might help host proposed workshops that are part of this proposal.
-
-[Andrew Heiss](https://www.andrewheiss.com/) has promised to help with a workshop aimed at packaging new ggplot2 extension functionality which is part of this proposal. Other expert package builders (especially in ggplot2 extension) will be recruited.
-
-## Consulted
-
-I'm grateful to the ASA Colorado-Wyoming Chapter membership for helpful feedback at the October 2023 meeting, after giving the talk: [Supporting a new wave of ggplot2 extenders: New points of entry for ggplot2 super-users](https://bit.ly/ggextend-cowy).
-
-I've also grateful to colleagues at West Point Math Department for their feedback on my talk about creating and using new Stats objects: ['Unlocking ggplot2 as a computational engine by extending ggplot2 statistical geometries'](https://evamaerey.github.io/mytidytuesday/2022-05-09-statistical-geometries/statistical_geometries.html#1)
-
-Furthermore, I've gained feedback from participants evaluating a new tutorial to Stat extension, [easy geom (Stat) recipes](https://github.com/EvaMaeRey/easy-geom-recipes). A survey and focus group was used to hear their reactions. In brief, I found that the recruited ggplot2 super users (regular users with several years of experience), either hadn't tried to enter the Stat extension space, or felt it was quite challenging. But there was a high success rates for new Stat creation using the new tutorial's recipes model. [Participant characteristics and tutorial evaluation can be found here](https://evamaerey.github.io/easy-geom-recipes/easy_geom_recipes_compute_group.html). West Point Cadet Morgan Brown assisted in writing the tutorial.
-
-# proposal
 
 ggplot2 is notable among R package, sometimes even sighted as a key reason for using the R language more broadly. Its elegance and flexibility, and track-record of being well-maintained makes it a attractive tool for analysts, journalists, educators and the like.
 
@@ -281,3 +163,99 @@ I have fleshed out a plan for doing this and preliminary work on this with empha
 > ''
 
 Further development of these resources and broad dissemination is the goal of this proposal. By supporting this proposal, I think the XXX grant will help ggplot2 and in turn R shine even brighter!
+
+
+
+## Everyday ggplot2 extension read-along packages
+
+- ggcalendar
+- ggcirclepack
+- 
+
+    -   \[ggols\]
+    -   \[ggsample\]
+    -   \[ma206data\]
+    -   \[ma206distributions\]
+    -   \[ma206equations\]
+
+<!-- https://www.newyorker.com/books/page-turner/the-allure-of-the-map#:~:text=Stevenson%20writes%2C%20in%20an%20essay,predestined%2C%20I%20ticketed%20my%20performance%20'-->
+
+## Spatial highlight
+
+<https://ivelasq.rbind.io/blog/leaidr2/> school district maps
+
+> I am told there are people that don't care for maps, and I find it hard to believe. - Robert Louis Stevenson
+
+-   \[ggamericas\] is an experiment in the geomSf-inheritance space, seeking to foster cross-package synergies, lessons learned, and emergence of best practices. The following packages are in the works and are proposed as early guides in this space:
+
+    -   [ggfips](https://github.com/EvaMaeRey/ggfips)
+
+    -   [ggnorthcarolina]()
+
+    -   [ggbrazil](https://github.com/EvaMaeRey/ggbrazil)
+
+    -   
+
+    ```{=html}
+    <!-- -->
+    ```
+
+    -   tidypivot
+    -   ggcirclepack
+
+<!-- Shiny linkage... -->
+
+<!--  - [codequoteforshiny] When you just want to talk about and manipulate the contents of a plot and not dig into the weeds of how to get there, shiny apps are great!  But if you are writing tools to make ggplot2 interfaces that make the code a closer match with how we think about the plot "getting the picture out of our heads", than you'll probably also want to quote the code!  Looking at the code shouldn't feel too "in the weeds" because of the grammar of graphic's conceptual mapping -- and your attention to conceptual mapping! -->
+
+# In-script extension highlight
+
+
+
+
+
+
+## Beyond 'Everyday ggplot2'
+
+Any 'everyday' ggplot2 extender should also be aware of other learning resources (compiled by Teun van der Brand).  These have been invaluable to crafting the 'everyday ggplot2' resources:
+
+-   The [extending ggplot2](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html) vignette
+
+-   The extending ggplot2 chapters of the [ggplot2 book](https://ggplot2-book.org/):
+
+    -   Chapter 19: [Programming with ggplot2](https://ggplot2-book.org/programming.html)
+    -   Chapter 20: [ggplot2 internals](https://ggplot2-book.org/internals.html)
+    -   Chapter 21: [Writing ggplot2 extensions](https://ggplot2-book.org/extensions.html)
+    -   Chapter 22: [Case Study: Springs](https://ggplot2-book.org/spring1.html)
+
+-   The [ggproto](https://stackoverflow.com/questions/tagged/ggproto) tag on StackOverflow
+
+-   [Extending your ability to extend ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/extending-your-ability-to-extend-ggplot2/) by Thomas Lin Pederson at rstudio::conf 2020
+
+-   [Cracking open ggplot internals with {ggtrace}](https://www.rstudio.com/resources/rstudioconf-2020/best-practices-for-programming-with-ggplot2/) by June Choe at rstudio::conf 2022
+
+-   [Best practises for programming with ggplot2](https://www.rstudio.com/resources/rstudioconf-2020/best-practices-for-programming-with-ggplot2/) by Dewey Dunnington at rstudio::conf 2020
+
+
+## Acknowledgements
+
+
+I'm indebted to the ggplot2 extenders meet-up presenters and participants, that have provided a wealth of insight about extension experiences.  Especially notably in willingness to have conversations about how to make extension more accessible is June Choe; he also has been very open to technical discussion and has played an especially large role in my own fluency in using delayed aesthetic evaluation. Teun van den Brand has also been helpful and open to discussion about about technical aspects of particular extension questions.
+
+<!-- In the future anticipate Denver R-Ladies to be a resource for candid, person-to-person feedback. We recently relaunched the group and I anticipate interest in the topic of ggplot2 extension, and might help host proposed workshops that are part of this proposal. -->
+
+<!-- Andrew Heiss has promised to help with a workshop aimed at packaging new ggplot2 extension functionality which is part of this proposal. Other expert package builders (especially in ggplot2 extension) will be recruited. -->
+
+<!-- Consulted -->
+
+I'm grateful to the ASA Colorado-Wyoming Chapter membership for helpful feedback at the October 2023 meeting, after giving the talk: Supporting a new wave of ggplot2 extenders: New points of entry for ggplot2 super-users.
+
+I've also grateful to colleagues at West Point Math Department for their feedback on my talk about creating and using new Stats objects: 'Unlocking ggplot2 as a computational engine by extending ggplot2 statistical geometries'
+
+Furthermore, I've gained feedback from participants evaluating a new tutorial to Stat extension, easy geom (Stat) recipes. A survey and focus group was used to hear their reactions. In brief, I found that the recruited ggplot2 super users (regular users with several years of experience), either hadn't tried to enter the Stat extension space, or felt it was quite challenging. But there was a high success rates for new Stat creation using the new tutorial's recipes model. Participant characteristics and tutorial evaluation can be found here. West Point Cadet Morgan Brown assisted in writing the tutorial.
+
+
+
+
+
+
+

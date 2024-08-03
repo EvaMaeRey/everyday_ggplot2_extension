@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: _site
 
 website:
   title: "Everyday ggplot2 extension 🫖"
@@ -11,15 +11,13 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - projects.qmd
-      - href: index.qmd
+      - href: tutorials.qmd
         text: Tutorials
-      - href: index.qmd
+      - href: community.qmd
         text: Community
-      - href: index.qmd
+      - href: cookbook.qmd
         text: Cookbook
-      - href: index.qmd
-        text: Impact
+
     tools:
       - icon: github
         href: https://github.com/evamaerey/everyday_ggplot2_extension

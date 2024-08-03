@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "",
+    "text": "ggplot2 is notable in the data visualization space. Its elegance and flexibility as well as its track-record of being well-maintained makes it a attractive tool for researchers, business professionals, journalists, educators and the like.\nggplot2 lets users ‘write their plots into existence’. Users identify required plot components, name those elements, and ggplot2 produces the described plot. Code tends to be concise and intuitive, and it provides a faithful record of inputs and specification of a rendered plot.\n\n\n\n\n\n\n\n\n\nExtending ggplot2 is a powerful way to enhance productivity and make plot coding more fluid and enjoyable. Given this, it’s surprising just how limited some quite useful extension mechanism are — even among seasoned ggplot2 users. The reason might because of the prevailing attitude that, ‘extending ggplot2 … is not for the faint-hearted’1 and that extension fairly inaccessible activity suitable for dedicated ‘devs’ with considerable time on their hands. This is unfortunate. We think this reality doesn’t need to persist and is resolvable with greater focused and sustained attention to educational resources for potential extenders.\n‘everyday ggplot2 extension’ is born from the belief extension could be much more accessible and mainstream (2020-present). It’s goal is to provide education materials that will meet potential extenders where they and provide a community of support in extension endeavors. In short, this project seeks to support a new wave of extenders.2\n\n\n‘Everyday’ is meant in the sense of ordinary – your ggplot2 extension doesn’t need to be flashy or complicated. And ‘ordinary’ ggplot2 users (who may be quite extraordinary in other domains) should be able to harness previously less accessed – but powerful – extension mechanisms.\n‘Everyday’ is also meant in the sense of frequent. Practicing ggplot2 extension will probably make you better at extension - you’ll be in a position to write that next handy extension once when you have more experience under your belt. We’ve got some bite-sized exercises for you to build your know-how.\nFurthermore, we model how to use extension mechanisms on the day-to-day. I.e. on-the-fly and in script use. (For those who are eventually interested in packaging, the project seeks to support best practice in that area as well - workshop to come).\n\n\n\nBy now, if you happen to know the book ‘The Design of Everyday Things’, you may be thinking our title evokes that work. That’s correct. An aim is to design new avenues for bringing people into ggplot2 extension.\n\n\n\n\n\n\n\n\n\nAnd it’s to be expected that we’ll make poorly designed ggplot2 extensions along the way. And this is fine since mistakes can sometimes be more instructive and memorable than doing things ‘the right way’ the first time round. It’s hard to imagine Norman’s book selling as well without the ill-conceived tea kettle gracing the cover. In fact the ‘Norman door’ is one whose design makes door-use difficult. Expecting mistakes is another reason to make ggplot2 extension a less out-of-the-ordinary experience; past extensions feel less precious and we can part ways with them if appropriate. A deprecated package or abandoned function may have been of great service in getting you to a place that’s more elegant or efficient."
+  },
+  {
+    "objectID": "index.html#extension-for-mere-mortals-everyday-users",
+    "href": "index.html#extension-for-mere-mortals-everyday-users",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "",
+    "text": "‘Everyday’ is meant in the sense of ordinary – your ggplot2 extension doesn’t need to be flashy or complicated. And ‘ordinary’ ggplot2 users (who may be quite extraordinary in other domains) should be able to harness previously less accessed – but powerful – extension mechanisms.\n‘Everyday’ is also meant in the sense of frequent. Practicing ggplot2 extension will probably make you better at extension - you’ll be in a position to write that next handy extension once when you have more experience under your belt. We’ve got some bite-sized exercises for you to build your know-how.\nFurthermore, we model how to use extension mechanisms on the day-to-day. I.e. on-the-fly and in script use. (For those who are eventually interested in packaging, the project seeks to support best practice in that area as well - workshop to come)."
+  },
+  {
+    "objectID": "index.html#anticipating-hurdles-and-learning-through-failure",
+    "href": "index.html#anticipating-hurdles-and-learning-through-failure",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "",
+    "text": "By now, if you happen to know the book ‘The Design of Everyday Things’, you may be thinking our title evokes that work. That’s correct. An aim is to design new avenues for bringing people into ggplot2 extension.\n\n\n\n\n\n\n\n\n\nAnd it’s to be expected that we’ll make poorly designed ggplot2 extensions along the way. And this is fine since mistakes can sometimes be more instructive and memorable than doing things ‘the right way’ the first time round. It’s hard to imagine Norman’s book selling as well without the ill-conceived tea kettle gracing the cover. In fact the ‘Norman door’ is one whose design makes door-use difficult. Expecting mistakes is another reason to make ggplot2 extension a less out-of-the-ordinary experience; past extensions feel less precious and we can part ways with them if appropriate. A deprecated package or abandoned function may have been of great service in getting you to a place that’s more elegant or efficient."
+  },
+  {
+    "objectID": "index.html#tutorials",
+    "href": "index.html#tutorials",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Tutorials",
+    "text": "Tutorials"
+  },
+  {
+    "objectID": "index.html#cookbook",
+    "href": "index.html#cookbook",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Cookbook",
+    "text": "Cookbook"
+  },
+  {
+    "objectID": "index.html#community",
+    "href": "index.html#community",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Community",
+    "text": "Community"
+  },
+  {
+    "objectID": "index.html#fine-print",
+    "href": "index.html#fine-print",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Fine print",
+    "text": "Fine print\nThe focus at present has been Stat extension, though we hope to emphasize other areas.\ncompute_group recipes and tutorial\nggplot2 is notable among R package, sometimes even sighted as a key reason for using the R language more broadly. Its elegance and flexibility, and track-record of being well-maintained makes it a attractive tool for analysts, journalists, educators and the like.\nggplot2 lets users ‘speak their plots into existence’. Users identify requisite, orthogonal plot elements, name those elements and ggplot2 produces the described plot. The composition-based nature of ggplot2 is key to its usability and in turn its popularity.\nHowever, sorely under-utilized are ggplot2 extension mechanisms — and in particular, the creation and use of new Stats. I believe providing education for this mechanism that could take productivity and statistical storytelling with ggplot2 to new heights.\nBase ggplot2, of course, makes a lot of Stats available to users. Any time we use geom_histogram, geom_boxpot, geom_smooth, etc, mercifully much computation is happens under the hood for users. Compute is defined in ggproto objects like StatBin, StatBoxplot, StatSmooth which are used in these functions and computation is done automatically.\nWhen users create new Stats via extension, they access ggplot2’s general capability as a computation engine. These users realize that off-loading a computational task to a ggplot2 extension function will save their future-selves or others from doing painstaking computational tasks as a prep step. Having designated Stats means that computation is enabled at the point-of-use: within the plot pipeline via a descriptive function (e.g. geom_point_means() could be defined to plot a point at the means of x and y), instead of requiring computation before starting to plot (and in this case the creation of a derivitive dataset). And that scope of the Stat computation can be modified blazingly fast, via the addition of a group aesthetic or faceting declaration.\n\nIt may seem surprising, but creating new stats is one of the most useful ways to extend the capabilities of ggplot2. – ggplot2: Elegant Graphics for Data Analysis\n\nUnfortunately, relatively few ggplot2 users have managed to harness the power of this very useful mechanism. The reason for this is likely that dedicated educational material is quite limited. The topic has been covered by extension mechanism authors in works like the ggplot2 extension vignette and in ggplot2: Elegant Graphics for Data Analysis, 3rd Edition, but because they are a small part of a much larger topic. In helpful and notable extend your ability to extend ggplot2 talk by Thomas Lin Pederson, it’s time that doesn’t allow for multiple examples which could help users to start recognizing and differentiating patterns for new Stat creation. I believe that more focused, sustained attention is required of educational materials that want to help ggplot2 users get into Stat creation.\n\nOf particular concern is that barriers to entry and a lack of education is preventing people that could be be particularly prolific and efficacious from making contributions in ggplot2 extension. People with heavy teaching or analytic reporting loads, for example, might not think they have the time-resources to dedicate to figuring out Stat extension since educational materials have been relatively sparse. But extension by such people could be game-changing for their own teaching or analytic work – and could have further impacts should they share more broadly.\nEducator, XXX, who recently attended the ggplot2 extenders meet-up and who is XXXX specializing in data visualization commented over email about her work with that uses ggplot2. Quoting her with permission:\n\n““.\n\nShe further this general prevalence of this inelegance:\n\n“”\n\nThis comment speaks to the need for greater education in ggplot2 extension mechanisms.\nI have fleshed out a plan for doing this and preliminary work on this with emphasis on Stats creation. After hearing XXX reflections, I decided she might be interested in this new work. Her response, used with permission, is encouraging.\n\n’’\n\nFurther development of these resources and broad dissemination is the goal of this proposal. By supporting this proposal, I think the XXX grant will help ggplot2 and in turn R shine even brighter!"
+  },
+  {
+    "objectID": "index.html#everyday-ggplot2-extension-read-along-packages",
+    "href": "index.html#everyday-ggplot2-extension-read-along-packages",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Everyday ggplot2 extension read-along packages",
+    "text": "Everyday ggplot2 extension read-along packages\n\nggcalendar\nggcirclepack\n\n[ggols]\n[ggsample]\n[ma206data]\n[ma206distributions]\n[ma206equations]"
+  },
+  {
+    "objectID": "index.html#spatial-highlight",
+    "href": "index.html#spatial-highlight",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Spatial highlight",
+    "text": "Spatial highlight\nhttps://ivelasq.rbind.io/blog/leaidr2/ school district maps\n\nI am told there are people that don’t care for maps, and I find it hard to believe. - Robert Louis Stevenson\n\n\n[ggamericas] is an experiment in the geomSf-inheritance space, seeking to foster cross-package synergies, lessons learned, and emergence of best practices. The following packages are in the works and are proposed as early guides in this space:\n\nggfips\nggnorthcarolina\nggbrazil\n\n\n\n\ntidypivot\nggcirclepack"
+  },
+  {
+    "objectID": "index.html#beyond-everyday-ggplot2",
+    "href": "index.html#beyond-everyday-ggplot2",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Beyond ‘Everyday ggplot2’",
+    "text": "Beyond ‘Everyday ggplot2’\nAny ‘everyday’ ggplot2 extender should also be aware of other learning resources (compiled by Teun van der Brand). These have been invaluable to crafting the ‘everyday ggplot2’ resources:\n\nThe extending ggplot2 vignette\nThe extending ggplot2 chapters of the ggplot2 book:\n\nChapter 19: Programming with ggplot2\nChapter 20: ggplot2 internals\nChapter 21: Writing ggplot2 extensions\nChapter 22: Case Study: Springs\n\nThe ggproto tag on StackOverflow\nExtending your ability to extend ggplot2 by Thomas Lin Pederson at rstudio::conf 2020\nCracking open ggplot internals with {ggtrace} by June Choe at rstudio::conf 2022\nBest practises for programming with ggplot2 by Dewey Dunnington at rstudio::conf 2020"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nI’m indebted to the ggplot2 extenders meet-up presenters and participants, that have provided a wealth of insight about extension experiences. Especially notably in willingness to have conversations about how to make extension more accessible is June Choe; he also has been very open to technical discussion and has played an especially large role in my own fluency in using delayed aesthetic evaluation. Teun van den Brand has also been helpful and open to discussion about about technical aspects of particular extension questions.\n\n\n\nI’m grateful to the ASA Colorado-Wyoming Chapter membership for helpful feedback at the October 2023 meeting, after giving the talk: Supporting a new wave of ggplot2 extenders: New points of entry for ggplot2 super-users.\nI’ve also grateful to colleagues at West Point Math Department for their feedback on my talk about creating and using new Stats objects: ‘Unlocking ggplot2 as a computational engine by extending ggplot2 statistical geometries’\nFurthermore, I’ve gained feedback from participants evaluating a new tutorial to Stat extension, easy geom (Stat) recipes. A survey and focus group was used to hear their reactions. In brief, I found that the recruited ggplot2 super users (regular users with several years of experience), either hadn’t tried to enter the Stat extension space, or felt it was quite challenging. But there was a high success rates for new Stat creation using the new tutorial’s recipes model. Participant characteristics and tutorial evaluation can be found here. West Point Cadet Morgan Brown assisted in writing the tutorial."
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Why Everyday ggplot2 extension?",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://www.cynthiahqy.com/posts/ggplot-helper-design/↩︎\nsupport a new wave of ggplot2 extenders.↩︎"
+  }
+]
