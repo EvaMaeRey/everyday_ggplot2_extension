@@ -227,18 +227,28 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <!-- > Pooh began to feel a little more comfortable, because when you are a Bear of Very Little Brain, and you Think of Things, you find sometimes that a Thing which seemed very Thingish inside you is quite different when it gets out into the open and has other people looking at it. - A.A. Milne The House at Pooh Corner (1928) ch. 6 -->
 <section id="tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="tutorials"><a href="./tutorials">Tutorials</a></h2>
+<h2 class="anchored" data-anchor-id="tutorials"><a href="tutorials">Tutorials</a></h2>
 </section>
 <section id="cookbook" class="level2">
 <h2 class="anchored" data-anchor-id="cookbook"><a href="./cookbook">Cookbook</a></h2>
 </section>
 <section id="community" class="level2">
-<h2 class="anchored" data-anchor-id="community"><a href="./community">Community</a></h2>
+<h2 class="anchored" data-anchor-id="community"><a href="./community.html">Community</a></h2>
 </section>
 <section id="fine-print" class="level2">
 <h2 class="anchored" data-anchor-id="fine-print">Fine print</h2>
 <p>The focus at present has been Stat extension, though we hope to emphasize other areas.</p>
 <p>We believe that Stat extension is sorely under-utilized. Providing education for this mechanism that could greatly enhance productivity as well as data storytelling with ggplot2.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://m.media-amazon.com/images/I/51QANGEP6FL._SY342_.jpg" class="img-fluid figure-img"></p>
+<figcaption>Bruce Frey’s approach is pragmatic in ‘There’s a Stat for that!’</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>Base ggplot2, of course, makes a lot of Stats available to users. Any time we use <code>geom_histogram</code>, <code>geom_boxpot</code>, <code>geom_smooth</code>, etc, mercifully much computation is happens under the hood for users. Compute is defined in ggproto objects like <code>StatBin</code>, <code>StatBoxplot</code>, <code>StatSmooth</code> which are used in these functions and computation is done automatically.</p>
 <p>When users create new Stats via extension, they access ggplot2’s <em>general</em> capability as a computation engine. These users realize that off-loading a computational task to a ggplot2 extension function will save their future-selves or others from doing painstaking computational tasks as a prep step. Having designated Stats means that computation is enabled at the point-of-use: <em>within</em> the plot pipeline via a descriptive function (e.g.&nbsp;geom_point_means() could be defined to plot a point at the means of x and y), instead of requiring computation before starting to plot (and in this case the creation of a derivative dataset). And that <em>scope</em> of the Stat computation can be modified blazingly fast, via the addition of a group aesthetic or faceting declaration.</p>
 <blockquote class="blockquote">
