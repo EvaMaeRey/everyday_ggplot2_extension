@@ -5,43 +5,37 @@ editor: visual
 
 # Why *Everyday ggplot2 extension?*
 
-`ggplot2` is notable in the data visualization space. Its elegance and flexibility as well as its track-record of being well-maintained makes it a attractive tool for researchers, business professionals, journalists, educators and the like.
+`ggplot2` is notable in the data visualization space. Its elegance and flexibility as well as its track-record of being well-maintained makes it a attractive tool for researchers, business professionals, journalists, and educators.
 
-`ggplot2` lets users 'write their plots into existence'. Users identify required plot components, name those elements, and ggplot2 produces the described plot. Code tends to be concise and intuitive, and it provides a faithful record of inputs and specification of a rendered plot.
+`ggplot2` lets users 'speak their plots into existence'. Users name required plot components and ggplot2 produces the described plot. Code tends to be concise and intuitive, and it provides a faithful record of the specification of a rendered plot.
 
 ```{r, include = F}
 knitr::opts_chunk$set(message = F, echo = F, warning = F)
 ```
 
-```{r}
+```{r, echo = F, warning=F, fig.height=3.5}
+# download.file("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ggplot2_hex_logo.png/800px-Ggplot2_hex_logo.png", destfile = "800px-Ggplot2_hex_logo.png")  
+  
+
 library(ggstamp)
 library(ggplot2)
 ggcanvas() + 
   stamp_polygon(x0y0 = pos_honeycomb(n = 50, ncol = 10), 
                 fill = "whitesmoke") + 
-  # stamp_text(label = c("ggxmean", "ggstamp", "ggols", 
-  #                      "ggsample", "ggcalendar", 
-  #                      "ggchalkb...", "ggquiet", "ggcirclepack",
-  #                      "ggdirect"), 
-  #            xy = pos_honeycomb(n = 9), size = 5) +
-  # labs(title = "trying stuff out in ggplot2 extension",
-  #      subtitle = "honeycombs are surprisingly strong structures",
-  #      caption = "expert and experiment have the same latin root: 'experi', to try") +
   ggstamp::stamp_wash(fill = "whitesmoke") +
   ggstamp::theme_void_fill("whitesmoke") + 
   ggstamp::stamp_png(png = "800px-Ggplot2_hex_logo.png", x0 = 6,
                      y0 = -3, width = 4
                     )
 
-download.file("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ggplot2_hex_logo.png/800px-Ggplot2_hex_logo.png", destfile = "800px-Ggplot2_hex_logo.png")  
-  
+
 ```
 
-*Extending* ggplot2 is a powerful way to enhance productivity and make plot coding more fluid and enjoyable. Given this, it's surprising just how limited some quite useful extension mechanism are — even among seasoned ggplot2 users. The reason might because of the prevailing attitude that, 'extending `ggplot2` ... is not for the faint-hearted'[^1] and that extension fairly inaccessible activity suitable for dedicated 'devs' with considerable time on their hands. This is unfortunate. We think this reality doesn't need to persist and is resolvable with greater focused and sustained attention to educational resources for potential extenders.
+*Extending* ggplot2 is a powerful way to enhance productivity and make plot coding more fluid and enjoyable. Given this, it's surprising just how limited the use of some quite powerful extension mechanism are — even among seasoned ggplot2 users. The reason might because of the prevailing attitude that, 'extending `ggplot2` ... is not for the faint-hearted'[^1] and that extension is a fairly inaccessible activity suitable for dedicated developers with considerable time on their hands. This is unfortunate. We think this reality doesn't need to persist and is resolvable with greater focused and sustained attention to educational resources for potential extenders.
 
 [^1]: <https://www.cynthiahqy.com/posts/ggplot-helper-design/>
 
-'everyday ggplot2 extension' is born from the belief extension could be much more accessible and mainstream (2020-present). It's goal is to provide education materials that will meet potential extenders where they and provide a community of support in extension endeavors. In short, this project seeks to support a new wave of extenders.[^2]
+'everyday ggplot2 extension' is born from the belief extension could be much more accessible and mainstream (2020-present). It's goal is to provide education materials that will meet potential extenders where they and provide a community of support in extension endeavors. In short, this project seeks to support a new wave of ggplot2 extenders.[^2]
 
 [^2]: [support a new wave of ggplot2 extenders](https://bit.ly/ggextend-cowy).
 
